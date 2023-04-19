@@ -36,40 +36,53 @@ const retryButton = document.querySelector(".retry");
 const guessMoreButton = document.querySelector(".more");
 const guessLessButton = document.querySelector(".less");
 const startGameButton = document.querySelector(".start");
+const userCardDisplay = document.querySelector(".user-card");
+const currentCardDisplay = document.querySelector(".current-card");
 
-retryButton.addEventListener("click", () => {
-  instructionsDisplay.innerHTML = "";
+setTimeout(() => {
+  instructionsDisplay.innerHTML = "Qué va a ser: ¿mayor o menor?";
+  instructionsDisplay.style.fontSize = "4vh";
+  generateCards();
+  deck = deck.sort(() => Math.random() - 0.5);
+  currentCard = getRandomCard();
+  userCardDisplay.innerHTML = currentCard;
+}, 3000);
+
+guessMoreButton.addEventListener("click", () => {
+  const nextCard = getRandomCard();
+  currentCardDisplay.innerHTML = nextCard;
+  const currentValue = values.indexOf(currentCard.charAt(0));
+  const nextValue = values.indexOf(nextCard.charAt(0));
+  if (nextValue > currentValue) {
+    instructionsDisplay.innerHTML = "Acertaste.";
+    score++;
+  } else if (nextValue < currentValue) {
+    instructionsDisplay.innerHTML = "Fallaste.";
+    score++;
+  } else {
+    instructionsDisplay.innerHTML = "Libraste.";
+  }
+  round++;
+  console.log(score, round);
 });
-// const startGame = () => {
-//   do {
-//     generateCards();
-//     deck = deck.sort(() => Math.random() - 0.5);
-//     currentCard = getRandomCard();
-//     console.log(`Carta actual: ${currentCard}`);
-//     const userChoice = prompt(
-//       "¿La siguiente carta será mayor o menor?"
-//     ).toLowerCase();
-//     const nextCard = getRandomCard();
-//     const currentValue = values.indexOf(currentCard.charAt(0));
-//     const nextValue = values.indexOf(nextCard.charAt(0));
-//     if (nextValue > currentValue && userChoice === "mayor") {
-//       console.log(`Acertaste. La siguiente carta fue: ${nextCard}`);
-//       score++;
-//     } else if (nextValue < currentValue && userChoice === "menor") {
-//       console.log(`Acertaste. La siguiente carta fue: ${nextCard}`);
-//       score++;
-//     } else {
-//       console.log(`Fallaste. La siguiente carta fue: ${nextCard}`);
-//       console.log(`Carta actual: ${currentCard}`);
-//     }
-//     round++;
-//     deck = [];
-//     if (confirm("¿Quieres jugar de nuevo?")) {
-//       startGame();
-//     } else {
-//       console.log(`Tu puntuación final es: ${score} en ${round} rondas.`);
-//     }
-//   } while (rounds < 5);
-// };
 
-// startGame();
+guessLessButton.addEventListener("click", () => {
+  const nextCard = getRandomCard();
+  currentCardDisplay.innerHTML = nextCard;
+  const currentValue = values.indexOf(currentCard.charAt(0));
+  const nextValue = values.indexOf(nextCard.charAt(0));
+  if (nextValue > currentValue) {
+    instructionsDisplay.innerHTML = "Fallaste.";
+    score++;
+  } else if (nextValue < currentValue) {
+    instructionsDisplay.innerHTML = "Acertaste.";
+    score++;
+  } else {
+    instructionsDisplay.innerHTML = "Libraste.";
+  }
+  round++;
+});
+
+if (round > 10) {
+  instructionsDisplay.innerHTML = `Acertaste. Has acertado ${score} veces.`;
+}

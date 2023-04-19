@@ -7,15 +7,21 @@
 
 body {
   background-color: bisque;
-  z-index: -2;
+}
+
+main {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .right {
   display: flex;
   flex-direction: column;
-  height: 50vh;
-  width: 50%;
-  float: right;
+  height: 60vh;
+  /* width: 50%;
+  float: right; */
   align-items: center;
   justify-content: center;
 }
@@ -23,9 +29,9 @@ body {
 .left {
   display: flex;
   flex-direction: column;
-  height: 50vh;
-  width: 50%;
-  float: left;
+  height: 60vh;
+  /* width: 50%;
+  float: left; */
   align-items: center;
   justify-content: center;
 }
@@ -34,21 +40,20 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  height: 60vh;
-  width: 100vw;
-  margin-top: 20vh;
+  /* height: 60vh;
+  width: 100vw; */
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  position: absolute;
+  /* position: absolute; */
   z-index: -1;
 }
 
 .suits {
   display: flex;
-  font-size: 8vh;
+  font-size: 10vh;
   text-shadow: 0 0 10px black;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 3px white;
   color: black;
 }
 
@@ -63,9 +68,10 @@ body {
   padding-left: 5vw;
   padding-right: 5vw;
   text-align: center;
-  font-size: 3vh;
-  margin-top: 10vh;
+  font-size: 5vh;
+  margin-top: 2vh;
   margin-bottom: 5vh;
+  /* background-color: white; */
   width: 100vw;
   height: 10vh;
   display: flex;
@@ -75,7 +81,8 @@ body {
 
 .buttons {
   height: 10vh;
-  margin-top: 8vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -88,8 +95,8 @@ body {
   border: 3px solid black;
   border-radius: 5%;
   box-shadow: 0 0 10px black;
-  width: 20vh;
-  height: 30vh;
+  width: 35vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,12 +104,11 @@ body {
 .current-card {
   font-size: 15vh;
   background-color: white;
-  color: brown;
   border: 3px solid black;
   border-radius: 5%;
   box-shadow: 0 0 10px black;
-  width: 20vh;
-  height: 30vh;
+  width: 35vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,6 +124,8 @@ button {
   height: 10vh;
   outline: none;
   border: none;
+  margin-left: 1em;
+  margin-right: 1em;
   font-size: 2vh;
   font-weight: 500;
   cursor: pointer;
@@ -132,8 +140,8 @@ button:hover {
 }
 
 .retry {
-  width: 20vw;
-  height: 11vh;
+  width: 5vw;
+  height: 10vh;
   border-radius: 50%;
   border: 3px solid white;
   box-shadow: 0 0 10px black;
@@ -149,19 +157,19 @@ button:hover {
 
 .more,
 .less {
+  /* background-color: cornsilk; */
   border: 3px solid bisque;
   box-shadow: 0 0 15px white;
-  width: 20vw;
-  height: 11vh;
+  width: 50vh;
   font-size: 4vh;
 }
 
 span {
-  font-size: 2vh;
+  font-size: 8vh;
 }
 
 .start {
-  font-size: 3vh;
+  font-size: 5vh;
   font-weight: bolder;
   color: white;
   text-shadow: 0 0 1px black;

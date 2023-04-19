@@ -206,3 +206,40 @@ const startGame = () => {
 };
 
 startGame();
+
+// retryButton.addEventListener("click", () => {
+//   instructionsDisplay.textContent = "E";
+// });
+// const startGame = () => {
+//   do {
+//     generateCards();
+//     deck = deck.sort(() => Math.random() - 0.5);
+//     currentCard = getRandomCard();
+//     console.log(`Carta actual: ${currentCard}`);
+//     const userChoice = prompt(
+//       "¿La siguiente carta será mayor o menor?"
+//     ).toLowerCase();
+// const nextCard = getRandomCard();
+// const currentValue = values.indexOf(currentCard.charAt(0));
+// const nextValue = values.indexOf(nextCard.charAt(0));
+// if (nextValue > currentValue && userChoice === "mayor") {
+//   alert(`Acertaste. La siguiente carta fue: ${nextCard}`);
+//   score++;
+// } else if (nextValue < currentValue && userChoice === "menor") {
+//   alert(`Acertaste. La siguiente carta fue: ${nextCard}`);
+//   score++;
+// } else {
+//   alert(`Fallaste. La siguiente carta fue: ${nextCard}`);
+//   alert(`Carta actual: ${currentCard}`);
+// }
+// round++;
+//     deck = [];
+//     if (confirm("¿Quieres jugar de nuevo?")) {
+//       startGame();
+//     } else {
+//       alert(`Tu puntuación final es: ${score} en ${round} rondas.`);
+//     }
+//   } while (rounds < 5);
+// };
+
+// startGame();
